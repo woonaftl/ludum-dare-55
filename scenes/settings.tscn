@@ -1,0 +1,75 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc48rjgmtdrq6"]
+
+[ext_resource type="Script" path="res://scripts/settings.gd" id="1_qb20y"]
+[ext_resource type="Script" path="res://scripts/volume_slider.gd" id="2_b2nwa"]
+
+[node name="Settings" type="Window"]
+mode = 2
+position = Vector2i(0, 36)
+size = Vector2i(640, 360)
+exclusive = true
+unresizable = true
+borderless = true
+script = ExtResource("1_qb20y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "SETTINGS"
+horizontal_alignment = 1
+
+[node name="DisplayOptionContainer" type="HBoxContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/DisplayOptionContainer"]
+layout_mode = 2
+text = "DISPLAY MODE"
+
+[node name="DisplayModeButton" type="OptionButton" parent="VBoxContainer/DisplayOptionContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+item_count = 2
+popup/item_0/text = "WINDOWED"
+popup/item_0/id = 0
+popup/item_1/text = "FULLSCREEN"
+popup/item_1/id = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(280, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "VOLUME"
+
+[node name="MasterVolumeSlider" type="HSlider" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.001
+script = ExtResource("2_b2nwa")
+
+[node name="BackButton" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "BACK"
+
+[connection signal="item_selected" from="VBoxContainer/DisplayOptionContainer/DisplayModeButton" to="." method="_on_display_mode_button_item_selected"]
+[connection signal="value_changed" from="VBoxContainer/HBoxContainer/MasterVolumeSlider" to="VBoxContainer/HBoxContainer/MasterVolumeSlider" method="_on_value_changed"]
+[connection signal="pressed" from="VBoxContainer/BackButton" to="." method="_on_back_button_pressed"]

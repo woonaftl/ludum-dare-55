@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxuecmuhqliho"]
+
+[ext_resource type="Script" path="res://scripts/stick.gd" id="1_d3jbl"]
+
+[node name="Stick" type="Node2D"]
+script = ExtResource("1_d3jbl")
+
+[node name="SpriteTop" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+
+[node name="SpriteUnderwater" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+z_index = -1

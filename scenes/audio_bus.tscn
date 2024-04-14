@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://bo51mmot3egtk"]
+
+[ext_resource type="Script" path="res://scripts/audio_bus.gd" id="1_8ulg0"]
+[ext_resource type="AudioStream" uid="uid://cumjbj65i8n2p" path="res://audio/bubble.wav" id="2_1pldo"]
+[ext_resource type="AudioStream" uid="uid://bgs7vwu452drx" path="res://audio/summon.wav" id="3_doclx"]
+[ext_resource type="AudioStream" uid="uid://c5h42hjoj3tsm" path="res://audio/click.wav" id="4_07c7c"]
+[ext_resource type="AudioStream" uid="uid://d31cuaxitv5ti" path="res://audio/banish.wav" id="4_3532s"]
+[ext_resource type="AudioStream" uid="uid://dvi1qxpsj1stj" path="res://audio/win.wav" id="6_g7k62"]
+[ext_resource type="AudioStream" uid="uid://db1wle3h4bffv" path="res://audio/ambient.wav" id="7_t0pax"]
+[ext_resource type="AudioStream" uid="uid://b5c3p3tw1md2r" path="res://audio/quack.wav" id="8_j5kni"]
+
+[node name="AudioBus" type="Node"]
+script = ExtResource("1_8ulg0")
+
+[node name="Dialogue" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_1pldo")
+
+[node name="Summon" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_doclx")
+
+[node name="Click" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_07c7c")
+
+[node name="Banish" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_3532s")
+
+[node name="Win" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_g7k62")
+volume_db = -4.5
+
+[node name="Ambient" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_t0pax")
+volume_db = -3.0
+autoplay = true
+
+[node name="Quack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_j5kni")
+volume_db = -3.0

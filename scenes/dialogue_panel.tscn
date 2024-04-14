@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://dusb6smvmv5ur"]
+
+[ext_resource type="Script" path="res://scripts/dialogue_panel.gd" id="1_snhwc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qh41a"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="GDScript" id="GDScript_1g51b"]
+
+[node name="DialoguePanel" type="Panel"]
+z_index = 32
+custom_minimum_size = Vector2(400, 100)
+offset_right = 400.0
+offset_bottom = 80.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_qh41a")
+script = ExtResource("1_snhwc")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="DialogueLabel" type="RichTextLabel" parent="MarginContainer"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+theme_override_constants/line_separation = 8
+bbcode_enabled = true
+fit_content = true
+script = SubResource("GDScript_1g51b")

@@ -1,0 +1,28 @@
+[gd_resource type="TileSet" load_steps=9 format=3 uid="uid://o56fu6gbpe20"]
+
+[ext_resource type="Texture2D" uid="uid://cv50j1f3ibrjw" path="res://graphics/tiles/water_fill.png" id="1_owlxd"]
+[ext_resource type="Texture2D" uid="uid://dofoqwvnuhroo" path="res://graphics/tiles/water_corner2.png" id="2_psup1"]
+[ext_resource type="Texture2D" uid="uid://cxpafclq13r7n" path="res://graphics/tiles/water_wave.png" id="3_g6vh2"]
+[ext_resource type="Texture2D" uid="uid://crra0aqtrc3rn" path="res://graphics/tiles/water_corner.png" id="4_dl3ye"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6yop2"]
+texture = ExtResource("1_owlxd")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_73tb8"]
+texture = ExtResource("2_psup1")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c0leq"]
+texture = ExtResource("3_g6vh2")
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_i8ul0"]
+texture = ExtResource("4_dl3ye")
+0:0/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_6yop2")
+sources/1 = SubResource("TileSetAtlasSource_73tb8")
+sources/2 = SubResource("TileSetAtlasSource_c0leq")
+sources/4 = SubResource("TileSetAtlasSource_i8ul0")
