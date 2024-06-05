@@ -48,7 +48,7 @@ autowrap_mode = 0
 [node name="CreditsLabel" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 bbcode_enabled = true
-text = "[center]Game by woona
+text = "[center]Game by Eugene Begunkov
 
 Made for Ludum Dare 55 Compo
 in 48 hours
